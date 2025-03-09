@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#
+# Main entry point
+#
+# Usage: ruby bin/run [input_file] [price_table_file]
+#
+# Defaults: input_file = 'data/input.txt', price_table_file = 'data/price_table.txt'
+#
+require_relative '../lib/shipment_discount_calculator/price_table'
+require_relative '../lib/shipment_discount_calculator/calculator'
+require_relative '../lib/shipment_discount_calculator/input_processor'
+
+input_file = ARGV[0] || 'data/input.txt'
+price_table_file = ARGV[1] || 'data/price_table.txt'
+
+price_table = ShipmentDiscountCalculator::PriceTable.new(price_table_file)
+calculator  = ShipmentDiscountCalculator::Calculator.new(price_table)
+processor   = ShipmentDiscountCalculator::InputProcessor.new(calculator, input_file)
+processor.process
