@@ -41,9 +41,9 @@ The design is modular:
 2. Running the Application:  
    From the project root, run:
    ```
-   ruby bin/run data/input.txt data/shipping_price_table.txt
+   ruby bin/run data/input.txt data/price_table.txt
    ```
-   If no arguments are provided, the program defaults to `data/input.txt` and `data/shipping_price_table.txt`
+   If no arguments are provided, the program defaults to `data/input.txt` and `data/price_table.txt`
 
 3. Running the Tests:  
    Execute the test suite with:
